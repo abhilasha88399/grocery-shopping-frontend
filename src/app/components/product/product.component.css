@@ -1,0 +1,16 @@
+body{
+    background:url("/assets/background.jpg") ;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+   
+    height: 120vh;
+    size: 10px;
+    justify-content: space-between;
+    transform: translate();
+
+}
+.card{
+    transform: translate();
+    transition: all;
+}

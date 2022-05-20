@@ -1,0 +1,29 @@
+<header>
+    <div class="container">
+       <!--<i style="font-size: 40px; color: blue;" class="fas fa-shipping-fast">&nbsp;
+              
+        </i>-->
+        
+        <a href="#" routerLink="/" class="logo"> Grocery Shopping</a>
+        <nav>
+            <ul>
+                <li>
+                   
+                    <!--<a href="#" routerLink="/" class="logo">Home</a>
+                    <a class="logo" [routerLink]="['/login']" >Login</a>
+                    <a  class="logo" [routerLink]="['/registration']">Register </a>-->
+                   <a class="logo" [routerLink]="['/landing-page']" >Logout </a>
+                     
+                     
+                    <button >
+                    <a href="" class="logo" [routerLink]="['/cart-page']"  >Cart</a>
+                    
+                        <i style="font-size:30px;" class="fas fa-cart-plus"></i>
+                        <div style="font-size: 10px; font-size: large;" class="badge-bg-danger">{{totalItem}}</div>
+
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

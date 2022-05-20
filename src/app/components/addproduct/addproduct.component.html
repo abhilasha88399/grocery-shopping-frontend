@@ -1,0 +1,121 @@
+
+
+<div class="container">
+    <h1>Add Product</h1>
+    <h4 *ngIf="message" [style.color]="success ? 'green':'red'">{{message}}</h4>
+    <form #adduserform = "ngForm" novalidate (ngSubmit)="addproductformsubmit()">
+        {{user | json}}
+   
+       <!-- <div class="form-group">
+            <label for="productId">ProducId </label><br>
+            
+            <input type="productId"  placeholder="Enter productId" class="form-control" name="productId" [(ngModel)]="product.productId" 
+          required
+            #productId="ngModel" [class.is-invalid]="productId.invalid && productId.touched">
+             <div *ngIf="productId.errors && (productId.invalid && productId.touched)">
+            <div class="text-danger" *ngIf="productId.valid || productId.touched">productId is required field</div><br>
+          </div>
+          </div>
+          -->
+
+    
+
+          <div class="form-group">
+            <label for="Name">Product Name</label><br>
+            
+            <input type="Name"  placeholder="Enter product name" class="form-control" name="Name" [(ngModel)]="product.productName" 
+             required
+            #Name="ngModel" [class.is-invalid]="Name.invalid && Name.touched">
+             <div *ngIf="Name.errors && (Name.invalid && Name.touched)">
+            <small class="text-danger" *ngIf="Name.valid || Name.touched">product name is required field </small><br>
+          </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="Brand">Product Brand </label><br>
+            
+            <input type="Brand"  placeholder="Enter Brand" class="form-control" name="Brand" [(ngModel)]="product.brand"  required
+            #Brand="ngModel" [class.is-invalid]="Brand.invalid && Brand.touched">
+             <div *ngIf="Brand.errors && (Brand.invalid && Brand.touched)">
+            <small class="text-danger" *ngIf="Brand.valid || Brand.touched">Mobile number is required </small><br>
+          </div>
+          </div>
+           
+
+          <div class="form-group">
+            <label for="Price">Product Price</label><br>
+            
+            <input type="Price"  placeholder="Enter Price" class="form-control" name="Price" [(ngModel)]="product.price"  required
+            #Price="ngModel" [class.is-invalid]="Price.invalid && Price.touched">
+             <div *ngIf="Price.errors && (Price.invalid && Price.touched)">
+            <small class="text-danger" *ngIf="Price.valid || Price.touched">Price is required </small><br>
+          </div>
+          </div>
+
+        <!--<div ngModelGroup="category">
+            <div class="form-group">
+            <label for="category">Product Category</label><br>
+            
+            <input type="category"  placeholder="Enter Category" class="form-control" name="category" [(ngModel)]="product.category.name" 
+             required
+            #category="ngModel" [class.is-invalid]="category.invalid && category.touched">
+            <option value="">select category</option>
+            <option *ngFor="let category of categories">
+                {{category.name}}
+            </option>
+             <div *ngIf="ctegory.errors && (category.invalid && category.touched)">
+            <small class="text-danger" *ngIf="category.valid || category.touched">Category is required </small><br>
+          </div>
+          </div>
+        </div>
+        <div ngModelGroup="category">
+            <div class="form-group">
+              <label>Product Category</label>
+              <select class="custom-select" required
+                      name="categoryName"
+                      #categoryName = "ngModel"
+                      [class.is-invalid]="categoryName.invalid && categoryName.touched"
+                      [(ngModel)]="product.category.id">
+                  <option value="">select category</option>
+                  <option *ngFor="let category of categories">
+                      {{category.id}}
+                  </option>
+              </select>
+              <div *ngIf="categoryName.invalid && categoryName.touched">
+                <small class="text-danger">category is required</small>
+              </div>
+            </div>
+          </div>-->
+
+          
+          <div class="form-group">
+          <label for="Quantity">Product Quantity</label><br>
+            
+          <input type="Quantity"  placeholder="Enter Quantity" class="form-control" name="Quantity" [(ngModel)]="product.quantity"  required
+          #Quantity="ngModel" [class.is-invalid]="Quantity.invalid && Quantity.touched">
+           <div *ngIf="Quantity.errors && (Quantity.invalid && Quantity.touched)">
+          <small class="text-danger" *ngIf="Quantity.valid || Quantity.touched">Quantity is required field</small><br>
+        </div>
+        </div>
+
+          <div class="form-group">
+            <label for="imageUrl">Product imageUrl</label><br>
+            <input type="imageUrl" placeholder="Enter imageUrl" class="form-control" name="imageUrl" [(ngModel)]="product.imageUrl" required
+            #imageUrl="ngModel" [class.is-invalid]="imageUrl.invalid && imageUrl.touched">
+            <div *ngIf="imageUrl.errors && (imageUrl.invalid && imageUrl.touched)">
+            <small class="text-danger" *ngIf="imageUrl.valid || imageUrl.touched">password is required </small><br>
+          </div>
+          </div>
+
+        
+  
+        <button class="btn btn-success" type="submit" [disabled]="adduserform.invalid">submit</button>&nbsp;&nbsp;
+        <button class="btn btn-primary" type="button" (click)="gotoList()">Back</button>
+  
+  
+    </form>
+  </div>
+  
+  
+  

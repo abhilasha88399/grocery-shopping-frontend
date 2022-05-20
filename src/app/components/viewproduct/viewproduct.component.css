@@ -1,0 +1,10 @@
+.container img{
+    text-decoration: none;
+    color: inherit;
+    height: 100px;
+    width: 100px;
+    margin: 20px 0px;
+    border: none;
+    outline: none;
+    align-content: center;
+}

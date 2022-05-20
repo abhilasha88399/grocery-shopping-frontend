@@ -1,0 +1,47 @@
+<app-header></app-header>
+<body>
+    <!--<div class="name">
+        <h3>Hello! {{ user.firstName }}.</h3>
+      </div>-->
+<div  class="search">
+    <input type="text" placeholder="search product"
+     [(ngModel)]="searchkeyword"
+    >
+    <button >search</button>
+</div>
+<!--<app-tag></app-tag>-->
+<ng-container>
+<ul>
+    <li *ngFor="let  product of products | filter:searchkeyword">
+        <a > 
+                <img src="{{product.imageUrl}}" alt="product images" style="height: 200px;">
+                <div class="content">
+                <div class="name" >
+                    Name:  {{product.productName}}
+                    
+                     
+                </div>
+                <div class="brand">
+                    Brand: {{product.brand}}<br>
+                   <!-- Category : {{product.category.name}}-->
+               </div>
+                <div class="price">
+                   Price: Rs.{{product.price}}
+                </div>
+               
+                
+         
+               </div>
+        
+       
+            <div >
+                <form action="">
+                    <input type="hidden" name="productId" [(ngModel)]="product.id">
+               <button class="btn btn-primary" (click)=addtoCart(product)>Add to cart</button>
+                </form>
+        </div>
+    </a>
+    </li>
+</ul>
+</ng-container>
+</body>

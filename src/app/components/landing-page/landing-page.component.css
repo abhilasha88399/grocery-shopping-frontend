@@ -1,0 +1,23 @@
+body{
+    background:url("/assets/shopping.jpg") center fixed;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 20px;
+    height: 100vh;
+    size: 100px;
+    justify-content: space-between;
+}
+.container{
+    padding-top: 16%;
+    padding-left: 12%;
+    justify-content: space-between;
+}
+.container a{
+    justify-content: space-between;
+}
+a {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+    a:hover {
+      text-decoration: none; }

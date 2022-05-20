@@ -1,0 +1,149 @@
+
+<!--<ng-container *ngIf="user">-->
+
+  <img style="height: 600px; " src="/assets/register.png" alt="">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="guest-form-card card">
+  
+        <div class="card-header text-center" >
+          <h2>Register here</h2>
+  
+        </div>
+  
+        <div class="card-body">
+         
+          <form  #registerForm="ngForm" (ngSubmit)="registerUser()" >
+           <!-- {{loginForm.form.valid}}-->
+            <small style="color: red;">{{msg}}</small>
+            
+            
+
+            <div class="form-group">
+              <label for="firstName">First Name</label><br>
+              
+              <input type="firstName"  placeholder="Enter first name" class="form-control" name="firstName" [(ngModel)]="user.firstName" 
+              pattern="[A-Z][a-zA-z]{2,10}" required
+              #firstName="ngModel" [class.is-invalid]="firstName.invalid && firstName.touched">
+               <div *ngIf="firstName.errors && (firstName.invalid && firstName.touched)">
+              <div class="text-danger" *ngIf="firstName.valid || firstName.touched">First name is required field</div><br>
+              <div class="text-danger" *ngIf="firstName.errors.pattern">First name should start with upper case</div>
+            </div>
+            </div>
+
+      
+
+            <div class="form-group">
+              <label for="lastName">Last Name</label><br>
+              
+              <input type="lastName"  placeholder="Enter last name" class="form-control" name="lastName" [(ngModel)]="user.lastName" 
+              pattern="[A-Z][a-zA-z]{2,10}" required
+              #lastName="ngModel" [class.is-invalid]="lastName.invalid && lastName.touched">
+               <div *ngIf="lastName.errors && (lastName.invalid && lastName.touched)">
+              <small class="text-danger" *ngIf="lastName.valid || lastName.touched">Last name is required field </small><br>
+              <small class="text-danger" *ngIf="lastName.errors.pattern ">Last name should start with upper case</small>
+            </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="phoneNumber">Mobile Number</label><br>
+              
+              <input type="phoneNumber"  placeholder="Enter mobile number" class="form-control" name="phoneNumber" [(ngModel)]="user.phoneNumber" 
+              pattern="^((\\+91-?)|0)?[0-9]{10}$"  maxlength="10" required
+              #phoneNumber="ngModel" [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched">
+               <div *ngIf="phoneNumber.errors && (phoneNumber.invalid && phoneNumber.touched)">
+              <small class="text-danger" *ngIf="phoneNumber.valid || phoneNumber.touched">Mobile number is required </small><br>
+              <small class="text-danger" *ngIf="phoneNumber.errors.pattern">10 digit Mobile number is required</small>
+            </div>
+            </div>
+             
+
+            <div class="form-group">
+              <label for="userName">User Name</label><br>
+              
+              <input type="userName"  placeholder="Enter User name" class="form-control" name="userName" [(ngModel)]="user.userName" 
+              pattern="[a-zA-z0-9]{2,10}" required
+              #userName="ngModel" [class.is-invalid]="userName.invalid && userName.touched">
+               <div *ngIf="userName.errors && (userName.invalid && userName.touched)">
+              <small class="text-danger" *ngIf="userName.valid || userName.touched">User name is required </small><br>
+              <small class="text-danger" *ngIf="userName.errors.pattern">user name  only alphabets and numers </small>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <label for="userRole"><strong>User Role</strong></label>
+              <select id="userRole" class="form-control" name="userRole" [(ngModel)]="user.userRole"  #userRole required>
+                  <option value="USER">USER</option>
+                  <!--<option value="ADMIN">ADMIN</option>-->
+              </select>
+              <!--<label for="userRole">User Role</label><br>
+              
+              <input type="userRole"  placeholder=" enter userRole "class="form-control" name="userRole "[(ngModel)]="user.userRole" 
+              pattern="[a-zA-z]{2,10}" required
+              #userRole="ngModel" [class.is-invalid]="userRole.invalid && userRole.touched">-->
+               <div *ngIf="userRole.errors && (userRole.invalid && userRole.touched)">
+              <small class="text-danger" *ngIf="userRole.valid || userRole.touched">userRole is required </small><br>
+              <small class="text-danger" *ngIf="userRole.errors.pattern">userRole contains only alphabets </small>
+            </div>
+            </div>
+
+            
+            <div class="form-group">
+            <label for="email">Email</label><br>
+              
+            <input type="email"  placeholder="Enter email" class="form-control" name="email" [(ngModel)]="user.emailId" 
+            pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required
+            #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+             <div *ngIf="email.errors && (email.invalid && email.touched)">
+            <small class="text-danger" *ngIf="email.valid || email.touched">Email Id is required field</small><br>
+            <small class="text-danger" *ngIf="email.errors.pattern">valid Email Id ends with @gmail.com is required </small>
+          </div>
+          </div>
+  
+            <div class="form-group">
+              <label for="password">Password</label><br>
+              <input type="password" placeholder="Enter password" class="form-control" name="password" [(ngModel)]="user.password" required
+              pattern="^(?=\D*\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{6,30}$"
+              #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
+              <div *ngIf="password.errors && (password.invalid && password.touched)">
+              <small class="text-danger" *ngIf="password.valid || password.touched">password is required </small><br>
+              <small class="text-danger" *ngIf="password.errors.pattern">Password must contain one upper case one lower case and one special character  </small>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cpassword">Confirm Password</label><br>
+              <input type="password" placeholder="Enter confirm password" class="form-control" name="cpassword" [(ngModel)]="user.cpassword" required
+             
+              #cpassword="ngModel" [class.is-invalid]="cpassword.invalid && cpassword.touched">
+              <div *ngIf="cpassword.errors && (cpassword.invalid && cpassword.touched)">
+              <small class="text-danger" *ngIf="cpassword.value==password.value || cpassword.untouched">confirm password should match with password  </small><br>
+              
+            </div>
+            </div>
+          
+          
+            <div class="form-group">
+              
+              <label><input type="checkbox" name="remember">Remember Me</label>
+              
+             
+            </div>
+            <button [disabled]="registerForm.form.invalid"  class="btn btn-info" type="submit" >register</button>
+          </form>
+          <small class="float-right" [routerLink]="['/login']" > Already have account? login here</small>
+          <!--<small class="float-right" [routerLink]="['/registration']">  New User? Register here</small>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--</ng-container>-->
+  
+  
+  
+ 
+    
+    
+    
+    

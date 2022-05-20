@@ -1,0 +1,19 @@
+img{
+    padding-top: 10%;
+    padding-left: 10%;
+}
+.card{
+    margin-top: 5px;
+    border: none;
+    width: 500px;
+    padding: 0px;
+    position: absolute;
+    top:15%;
+    left: 50%;
+    transform: translate(-50 -50);
+    background-color: azure;
+  
+}
+.text-center{
+    text-align: center;
+}
